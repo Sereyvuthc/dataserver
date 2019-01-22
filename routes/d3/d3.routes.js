@@ -7,7 +7,7 @@ const d3Router = express.Router();
 
 
 /*
-Définition
+Définitions
 */
     class d3RouterClass{
         constructor(){}
