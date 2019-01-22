@@ -15,7 +15,7 @@ Définitions
         routes(){
 
             d3Router.get('/', (req, res) => {
-                res.render('d3');
+                res.json( { msg:"Hello API" } );
             });
         }
 
