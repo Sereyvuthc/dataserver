@@ -23,6 +23,7 @@ Définitions
 
                 //=> Regex to check numeric value
                 const regexNumeric = /(\d+(\.\d+)?)/;
+                const regexDate = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i;
 
 
 
@@ -35,8 +36,11 @@ Définitions
                     //=> Boucle sur un objet
                     for( let prop in item ){
                         //=> Vérifier les valeurs numériques
-                        if( regexNumeric.test(item[prop]) ){
+                        if( regexNumeric.test(item[prop]) && !regexDate.test(item[prop]) ){
                             console.log(+item[prop])
+                        }
+                        else if(regexDate.test(item[prop])){
+                            item[prop] = new Date(item[prop]);
                         }
                     }
                 }

@@ -24,7 +24,7 @@
                 .then( data => {
                    return data.json() // une fois la donnée en brut je renvoie en json
                 }) 
-                .then(jsonData => console.log(jsonData))
+                .then(jsonData => rawData.value = JSON.stringify(jsonData))
                 .catch(err => console.err(err));
             }
         } )
